@@ -21,8 +21,6 @@ export default class LogIn extends Component {
   render() {
     return (
       <div>
-        {/* <Link to="/" name="login" onClick={this.props.handleLogin}>Click to login</Link> */}
-        {/* {this.renderRedirect()} */}
         <form>
           <Segment className="form-segment">
             <Grid columns='equal'>
