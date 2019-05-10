@@ -19,7 +19,7 @@ export default class CommentList extends Component {
   }
 
   fetchComments = () => {
-    fetch(`https://dry-retreat-12210.herokuapp.com/comments`, {
+    fetch(`https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/comments`, {
       method: 'GET'
     })
       .then(results => results.json())
@@ -31,7 +31,7 @@ export default class CommentList extends Component {
 
   componentDidUpdate() {
     debounce(500, () => {
-      fetch(`https://dry-retreat-12210.herokuapp.com/comments`, {
+      fetch(`https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/comments`, {
         method: 'GET'
       })
         .then(results => results.json())
@@ -44,7 +44,7 @@ export default class CommentList extends Component {
 
   handleDeleteComment(comment) {
     axios
-      .delete(`https://dry-retreat-12210.herokuapp.com/comments/${comment}/deletecomment`)
+      .delete(`https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/comments/${comment}/deletecomment`)
       .then(res => {
         console.log(res);
         this.fetchComments();
@@ -57,7 +57,7 @@ export default class CommentList extends Component {
   handleNewComment = event => {
     event.preventDefault();
     axios
-      .post("https://dry-retreat-12210.herokuapp.com/comments/createcomment", {
+      .post("https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/comments/createcomment", {
         content: this.state.content,
         user: this.props.user,
         post: this.props.post

@@ -22,7 +22,7 @@ export default class Profile extends Component {
   handleEditProfile = event => {
     event.preventDefault();
     axios
-      .put(`https://dry-retreat-12210.herokuapp.com/users/${this.props.user._id}/update`, {
+      .put(`https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/users/${this.props.user._id}/update`, {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         email: this.state.email,

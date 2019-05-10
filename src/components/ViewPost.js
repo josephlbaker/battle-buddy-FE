@@ -17,7 +17,7 @@ export default class ViewPost extends Component {
   }
 
   fetchPost = () => {
-    fetch(`https://dry-retreat-12210.herokuapp.com/posts/${this.props.postId}`, {
+    fetch(`https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/posts/${this.props.postId}`, {
       method: 'GET'
     })
       .then(results => results.json())
@@ -51,7 +51,7 @@ export default class ViewPost extends Component {
       let currentUser = this.props.user.username
       this.state.post.players.push(currentUser)
       axios
-        .put(`https://dry-retreat-12210.herokuapp.com/posts/${this.state.post._id}/updatepost`, {
+        .put(`https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/posts/${this.state.post._id}/updatepost`, {
           players: this.state.post.players
         })
         .then(res => {

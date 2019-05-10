@@ -20,7 +20,7 @@ class App extends Component {
     if (localStorage.token) {
       axios({
         method: "get",
-        url: `https://dry-retreat-12210.herokuapp.com/users/`,
+        url: `https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/users/`,
         headers: { authorization: `Bearer ${localStorage.token}` }
       })
         .then(response => {
@@ -47,7 +47,7 @@ class App extends Component {
   handleLogin = event => {
     event.preventDefault();
     axios
-      .post("https://dry-retreat-12210.herokuapp.com/users/login", {
+      .post("https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/users/login", {
         email: this.state.email,
         password: this.state.password
       })
@@ -69,7 +69,7 @@ class App extends Component {
   handleSignUp = event => {
     event.preventDefault();
     axios
-      .post("https://dry-retreat-12210.herokuapp.com/users/signup", {
+      .post("https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/users/signup", {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         email: this.state.email,

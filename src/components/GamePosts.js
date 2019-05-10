@@ -19,7 +19,7 @@ export default class GamePosts extends Component {
   }
 
   fetchPosts = () => {
-    fetch("https://dry-retreat-12210.herokuapp.com/posts", {
+    fetch("https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/posts", {
       method: "GET"
     })
       .then(results => results.json())
@@ -33,7 +33,7 @@ export default class GamePosts extends Component {
 
   componentDidUpdate() {
     debounce(500, () => {
-      fetch("https://dry-retreat-12210.herokuapp.com/posts", {
+      fetch("https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/posts", {
         method: "GET"
       })
         .then(results => results.json())
@@ -85,7 +85,7 @@ export default class GamePosts extends Component {
   handleNewPost = event => {
     event.preventDefault();
     axios
-      .post("https://dry-retreat-12210.herokuapp.com/posts/createpost", {
+      .post("https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/posts/createpost", {
         title: this.state.title,
         content: this.state.content,
         user: this.props.user,

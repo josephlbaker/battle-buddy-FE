@@ -22,7 +22,7 @@ export default class Post extends Component {
   }
 
   fetchPosts = () => {
-    fetch("https://dry-retreat-12210.herokuapp.com/posts", {
+    fetch("https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/posts", {
       method: "GET"
     })
       .then(results => results.json())
@@ -36,7 +36,7 @@ export default class Post extends Component {
 
   componentDidUpdate() {
     debounce(500, () => {
-      fetch("https://dry-retreat-12210.herokuapp.com/posts", {
+      fetch("https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/posts", {
         method: "GET"
       })
         .then(results => results.json())

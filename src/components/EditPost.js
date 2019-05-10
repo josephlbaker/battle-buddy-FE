@@ -38,7 +38,7 @@ export default class EditPost extends Component {
   handleEditPost = event => {
     event.preventDefault();
     axios
-      .put(`https://dry-retreat-12210.herokuapp.com/posts/${this.props.post._id}/updatepost`, {
+      .put(`https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/posts/${this.props.post._id}/updatepost`, {
         title: this.state.title,
         content: this.state.content,
         platform: this.state.platform,
@@ -58,7 +58,7 @@ export default class EditPost extends Component {
 
   handleDeletePost = event => {
     axios
-      .delete(`https://dry-retreat-12210.herokuapp.com/posts/${this.props.post._id}/deletepost`)
+      .delete(`https://cors-anywhere.herokuapp.com/https://battle-buddy-redux-be.herokuapp.com/posts/${this.props.post._id}/deletepost`)
       .then(res => {
         console.log(res);
         this.props.handleGoBack();
